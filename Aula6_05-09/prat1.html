@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Praticando 1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <style>
+        .red-word {
+            color: red;
+        }
+
+        .blue-word {
+            color: blue;
+        }
+
+        body {
+            background-color: lightgray;
+        }
+
+        .back-blue {
+            background-color: rgb(134, 166, 255);
+        }
+
+        .back-red {
+            background-color: rgb(255, 126, 126);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Praticando 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam elementum finibus molestie. Vivamus sed rhoncus
+        sapien, eu dignissim velit.</p>
+
+    <div class="back-blue">
+        <p>Lorem ipsum dolor sit amet, <span class="red-word">consectetur</span> adipiscing elit. Etiam
+            elementum <span class="red-word">finibus</span>
+            molestie. Vivamus
+            sed rhoncus <span class="red-word">sapien,</span> eu dignissim velit.</p>
+        <p>Lorem ipsum dolor <span class="red-word">sit</span> amet, consectetur <span
+                class="red-word">adipiscing</span> elit. Etiam elementum finibus
+            molestie. Vivamus sed rhoncus
+            sapien, eu <span class="red-word">dignissim</span> velit.</p>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam elementum finibus molestie. Vivamus sed rhoncus
+        sapien, eu dignissim velit.</p>
+
+    <div class="back-red">
+        <p>Lorem ipsum <span class="blue-word">dolor</span> sit amet, consectetur adipiscing <span
+                class="blue-word">elit.</span> Etiam elementum finibus
+            molestie. Vivamus sed rhoncus
+            <span class="blue-word">sapien</span>, eu dignissim velit.
+        </p>
+        <p>Lorem ipsum dolor <span class="blue-word">sit</span> amet, consectetur <span
+                class="blue-word">adipiscing</span> elit. Etiam elementum finibus
+            molestie. Vivamus sed rhoncus
+            sapien, <span class="blue-word">eu</span> dignissim velit.</p>
+    </div>
+
+</body>
+
+</html>

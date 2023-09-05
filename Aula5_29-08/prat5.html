@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Praticando 5</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        #tab1,
+        #tab1 td {
+            border: solid 1px red;
+        }
+
+        #tab1 td {
+            padding: 30px 60px;
+            text-align: center;
+        }
+
+        #tab1 #tr1, #tr1 #td2 {
+            background-color: green;
+        }
+
+        #tab1 #tr2, #tr2 #td2 {
+            background-color: red;
+        }
+
+        #tab1 #tr3, #tr3 #td2 {
+            background-color: blue;
+        }
+
+        #tab1 #tr4, #tr4 #td2 {
+            background-color: yellow;
+        }
+
+        #tab2,
+        #tab2 td {
+            border: solid 1px red;
+        }
+
+        #tab2{
+            background-color: white;
+        }
+
+        #tab2 td{
+            padding: 3px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Praticando 5 - Tabela grande com colspan e rowspan e planos de fundo</h1>
+    <h4><a href="./index.html">Voltar para menu principal</a></h4>
+
+    <table id="tab1">
+        <caption>Tabela grande com colspan rowspan</caption>
+        <tr id="tr1">
+            <td colspan="2">Colspan</td>
+            <td>-</td>
+            <td rowspan="3">Rowspan</td>
+        </tr>
+        <tr id="tr2">
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr id="tr3">
+            <td>-</td>
+            <td colspan="2">Colspan</td>
+        </tr>
+        <tr id="tr4">
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+    </table>
+
+    <br>
+    <table id="tab2">
+        <caption>Legenda</caption>
+        <tr id="tr1">
+            <td>Linha 1</td>
+            <td id="td2">--------</td>
+            <td>green</td>
+        </tr>
+        <tr id="tr2">
+            <td>Linha 2</td>
+            <td id="td2">--------</td>
+            <td>red</td>
+        </tr>
+        <tr id="tr3">
+            <td>Linha 3</td>
+            <td id="td2">--------</td>
+            <td>blue</td>
+        </tr>
+        <tr id="tr4">
+            <td>Linha 4</td>
+            <td id="td2">--------</td>
+            <td>yellow</td>
+        </tr>
+    </table>
+
+</body>
+
+
+
+</html>
