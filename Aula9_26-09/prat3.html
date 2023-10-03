@@ -1,53 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset='utf-8'>
     <title>Praticando 3</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <style>
-        .quad {
-          height: 5vw; 
-          width: 5vw; 
-          background-color: green;
-          border-radius: 10%;
-          margin: 2px;
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        table{
-           margin: auto auto; 
+        .topo {
+            background-color: rgb(178, 245, 182);
+            display: flex;
+            flex-direction: column;
+            text-indent: 50px;
         }
 
-        .ball{
-            border-radius: 50%;
-            background-color: red;
+        .topo h1 {
+            font-size: 1.6vw;
         }
 
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.2vw;
+            margin: 1vw;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100vw;
+            height: 30vw;
+            border: 0.2vw solid rgb(14, 165, 25);
+        }
+
+        .corpo {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            line-height: 1vw;
+            width: 75vw;
+            height: 25vw;
+        }
+
+        .miniContainer {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            width: 10vw;
+            height: 7vw;
+            margin: 1vw;
+            border: 0.15vw solid black;
+        }
+
+        .miniContainer h1{
+            margin-bottom: 1vw;
+        }
+
+        .blocoLateral {
+            border-left: 0.2vw solid rgb(14, 165, 25);
+            display: flex;
+            flex-direction: column;
+            width: 35vw;
+            height: 30vw;
+        }
+
+        .blocoLateral h1 {
+            text-align: center;
+            font-size: 1.5vw;
+            margin-top: 1vw;
+        }
+
+        .blocoLateral p {
+            text-align: justify;
+            font-size: 0.8vw;
+            text-indent: 50px;
+            margin: 1vw;
+            line-height: 2vw;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 5vw;
+            background-color: rgb(178, 245, 182);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer p {
+            font-family: 'Courier New';
+            font-size: 1vw;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        h2 {
+            margin: 1vw;
+            font-size: 1.5vw;
+        }
+        
+        .lgndMini p{
+            font-size: 1vw;
+            font-style: italic;
+        }
     </style>
 </head>
-
 <body>
-    <h1>Praticando 3 - Desafio</h1>
-    <h4><a href="./index.html">Voltar para menu principal</a></h4>
-    <table>
-        <tr>
-            <td><div class="quad ball"></div></td>
-            <td><div class="quad"></div></td>
-            <td><div class="quad"></div></td>
-        </tr>
-        <tr>
-            <td><div class="quad"></div></td>
-            <td><div class="quad"></div></td>
-        </tr>
-        <tr>
-            <td><div class="quad"></div></td>
-            <td><div class="quad"></div></td>
-            <td><div class="quad"></div></td>
-        </tr>
-        <tr>
-            <td><div class="quad"></div></td>
-            <td><div class="quad"></div></td>
-        </tr>
-    </table>
+    <h4><a href="./index.html"></a></h4>
+    <div class="topo">
+        <h1>..:: Layout de site com Flexbox ::..</h1>
+        <div class="menu">
+            <div><a href="./index.html">Início</a></div>
+            <div><a href="">Sobre</a></div>
+            <div><a href="">Produtos</a></div>
+            <div><a href="">Contato</a></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left">
+            <div>
+                <h2>Corpo do Site</h2>
+            </div>
+            <div class="corpo">
+                <div class="miniContainer">
+                    <h1>1</h1>
+                    <div class="lgndMini"><p>One</p></div>
+                </div>
+                <div class="miniContainer">
+                    <h1>2</h1>
+                    <div class="lgndMini"><p>Two</p></div>
+                </div>
+                <div class="miniContainer">
+                    <h1>3</h1>
+                    <div class="lgndMini"><p>Three</p></div>
+                </div>
+                <div class="miniContainer">
+                    <h1>4</h1>
+                    <div class="lgndMini"><p>Four</p></div>
+                </div>
+                <div class="miniContainer">
+                    <h1>5</h1>
+                    <div class="lgndMini"><p>Five</p></div>
+                </div>
+                <div class="miniContainer">
+                    <h1>6</h1>
+                    <div class="lgndMini"><p>Six</p></div>
+                </div>
+                <div class="miniContainer">
+                    <h1>7</h1>
+                    <div class="lgndMini"><p>Seven</p></div>
+                </div>
+                <div class="miniContainer">
+                    <h1>8</h1>
+                    <div class="lgndMini"><p>Eight</p></div>
+                </div>
+                <div class="miniContainer">
+                    <h1>9</h1>
+                    <div class="lgndMini"><p>Nine</p></div>
+                </div>
+                <div class="miniContainer">
+                    <h1>10</h1>
+                    <div class="lgndMini"><p>Ten</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="blocoLateral">
+            <h1>Box Lateral</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut atque velit voluptates, corrupti temporibus
+                recusandae consequatur deleniti ut veritatis non, expedita sed qui neque quo, quibusdam eum rem maiores
+                pariatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit error veniam, nihil
+                consequuntur, quas suscipit ex quis earum minus quisquam pariatur nostrum nemo quod. Numquam sed
+                voluptas cumque a officia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Criado por Bruno Henrique Savazzi Dias</p>
+        <p>dias.savazzi@aluno.ifsp.edu.br</p>
+    </div>
 </body>
 </html>

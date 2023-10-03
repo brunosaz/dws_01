@@ -7,31 +7,33 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <style>
         .quad {
-            height: 10vw;
-            width: 10vw;
+            height: 8vw;
+            width: 8vw;
             background-color: green;
             margin: 1vw;
             float: right;
         }
 
         .retH {
-            height: 10vw;
-            width: 30vw;
+            height: 8vw;
+            width: 24vw;
             background-color: green;
             margin: 1vw;
-            float: right;
+            clear: right;
+            float: left;
         }
 
         .retV {
-            height: 30vw;
-            width: 10vw;
+            height: 24vw;
+            width: 8vw;
             background-color: green;
             margin: 1vw;
+            clear: left;
             float: right;
         }
 
-        .quad1 {
-            visibility: hidden;
+        .retsV {
+            float: left;
         }
     </style>
 </head>
@@ -46,27 +48,17 @@
         <div class="quad"></div>
         <div class="quad"></div>
         <div class="quad"></div>
-        <div class="quad quad1"></div>
-        <div class="quad quad1"></div>
-        <div class="quad quad1"></div>
-        <div class="quad quad1"></div>
-        <div class="quad quad1"></div>
+
     </div>
 
     <div class="retsH">
-        <div class="retH quad1"></div>
         <div class="retH"></div>
         <div class="retH"></div>
     </div>
 
-    <div class="retsH">
-        <div class="retV"></div>
-        <div class="retV"></div>
-        <div class="retV quad1"></div>
-        <div class="retV quad1"></div>
-        <div class="retV quad1"></div>
-        <div class="retV quad1"></div>
-        <div class="retV quad1"></div>
+    <div class="retV"></div>
+    <div class="retV"></div>
+    <div class="retsV">
         <div class="retV"></div>
     </div>
 
