@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Praticando 2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+    <h1>Praticando 2 - Formulários HTML Estilizado</h1>
+
+    <div class="formulario">
+        <form>
+            <div class="label">
+                <label for="nome">Nome</label>
+            </div>
+            <div class="input">
+                <input type="text" id="nome" name="nome" value="Bruno"><br>
+            </div>
+            <div class="label">
+                <label for="email">E-mail</label>
+            </div>
+            <div class="input">
+                <input type="email" id="email" name="email" placeholder="seu@email.aqui"><br>
+            </div>
+            <div class="label">
+                <label for="marca">Marca de carro preferida</label>
+            </div>
+            <div class="input">
+                <select name="marca" id="marca">
+                    <option value="volkswagen" selected>Volkswagen</option>
+                    <option value="volkswagen">Chevrolet</option>
+                    <option value="volkswagen">Honda</option>
+                </select><br>
+            </div>
+            <div class="label obs">
+                <label for="observacoes">Observações</label>
+            </div>
+            <div class="input">
+                <textarea name="observacoes" id="observacoes" cols="30" rows="5"></textarea>
+            </div>
+            <div class="label center">
+                <label for="html">
+                    <p>Linguagem Web favorita:</p>
+                </label>
+            </div>
+            <div class="radios">
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html"><img src="html.png" width="80px"></label>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css"><img src="css.png" width="80px"></label>
+                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <label for="javascript"><img src="js.webp" width="80px"></label><br><br>
+            </div>
+            <div class="label center">
+                <label for="filme1">Filmes que eu quero ver quando lançar:</label><br>
+            </div>
+            <div class="input">
+                <input type="checkbox" id="filme1" name="filme1" value="avengers">
+                <label for="filme1"> <a target="_blank" href="https://www.imdb.com/title/tt21357150/">Avengers: The Kang
+                        Dynasty</a></label><br>
+                <input type="checkbox" id="filme2" name="filme2" value="aquaman">
+                <label for="filme2"> <a target="_blank" href="https://www.adorocinema.com/filmes/filme-270235/">Aquaman
+                        2: O
+                        Reino Perdido</a></label><br>
+                <input type="checkbox" id="filme3" name="filme3" value="marvels">
+                <label for="filme3"> <a target="_blank" href="https://www.imdb.com/title/tt10676048/">The
+                        Marvels</a></label><br>
+                <input type="checkbox" id="filme4" name="filme4" value="deadpool">
+                <label for="filme4"> <a target="_blank" href="https://www.imdb.com/title/tt6263850/">Deadpool
+                        3</a></label>
+            </div>
+            <div class="label">
+                <input type="submit" value="Enviar">
+            </div>
+            <div class="input">
+                <input type="reset" value="Limpar">
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
