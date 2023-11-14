@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #luzApagada,
+        #luzAcesa {
+            width: 20vw;
+        }
+
+        #acesa {
+            display: none;
+        }
+
+        #acesa,
+        #apagada {
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: black;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <body>
+
+        <h1 class="mb-5">Praticando 3 - Lâmpada</h1>
+        <div class="row justify-content-center" id="apagada">
+            <img onclick="acende()" class="mt-5 luz" id="luzApagada" src="./lampada.png" alt="Lâmpada Apagada">
+            <h2 class="text-center">Lâmpada Apagada</h2>
+        </div>
+
+        <div class="row justify-content-center" id="acesa">
+            <img onclick="apaga()" class="mt-5 luz" id="luzAcesa" src="./lampada-acesa.png" alt="Lâmpada Acesada">
+            <h2 class="text-center">Lâmpada Acesa</h2>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                var luz = $('.luz');
+                var div = $('#apagada');
+                var div2 = $('#acesa');
+                var body = $('body');
+
+                luz.hover(                
+                    function () {
+                        div.hide();
+                        div2.css('display', 'flex');
+                        body.css('color', 'black');
+                        body.css('background-color', 'white');                        
+                    },
+                    function () {
+                        div2.hide();
+                        div.css('display', 'flex');
+                        body.css('color', 'white');
+                        body.css('background-color', 'black');
+                    }
+                );                
+            });
+
+        </script>
+
+    </body>
+
+</html>
