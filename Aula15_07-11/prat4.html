@@ -21,28 +21,31 @@
             padding: 4px;
         }
 
-        #boxGreen {
+        .box {
             width: 5em;
             height: 5em;
             border: solid 4px black;
-            background-color: green;
             margin: 12px;
+        }
+
+        #boxGreen {
+            background-color: green;
         }
 
         #boxBlue {
-            width: 5em;
-            height: 5em;
-            border: solid 4px black;
             background-color: blue;
-            margin: 12px;
         }
 
         #boxRed {
-            width: 5em;
-            height: 5em;
-            border: solid 4px black;
             background-color: red;
-            margin: 12px;
+        }
+
+        .active {
+            margin-top: 10vh;
+            margin-left: 45vw;
+            position: absolute;
+            z-index: 1;
+            border: solid 4px yellow;
         }
     </style>
 
@@ -60,19 +63,60 @@
             <li>Depois use as teclas <span id="lt">W</span> <span id="lt">A</span> <span id="lt">S</span> <span
                     id="lt">D</span> para movimentar os elementos para cima, esquerda, baixo e direita respectivamente.
             </li>
+            <input type="hidden" id="ativo" value="0">
         </ol>
         <div class="text-center">
             <img src="wasd.jpg" alt="Teclas">
         </div>
 
-        <div class="d-flex">
-            <div id="boxRed"></div>
-            <div id="boxBlue"></div>
-            <div id="boxGreen"></div>
+        <div class="d-flex caixas">
+            <div id="boxRed" class="box" onclick="caixa('Red')"></div>
+            <div id="boxBlue" class="box" onclick="caixa('Blue')"></div>
+            <div id="boxGreen" class="box" onclick="caixa('Green')"></div>
         </div>
 
         <script>
+            var caixaAtual = null;
+            var cor = document.querySelector('#ativo');
+            var divPai = document.querySelector('.caixas');
+            var fundo = document.body;
 
+            function caixa(elemento) {
+                if (caixaAtual != null) {
+                    if (cor.value == elemento) {
+                        caixaAtual.classList.remove('active');
+                        fundo.removeChild(caixaAtual);
+                        divPai.appendChild(caixaAtual);
+                        caixaAtual = null;
+                        cor.value = '0';
+                    } else {
+                        alert("Atenção! Já existe um quadrado selecionado, desselecione-o antes de selecionar outro.");
+                    }
+                } else {
+                    cor.value = elemento;
+                    caixaAtual = document.querySelector('#box' + elemento);
+                    divPai.removeChild(caixaAtual);
+                    fundo.appendChild(caixaAtual);
+                    caixaAtual.classList.add('active');
+                }
+            }
+
+            document.addEventListener('keydown', function (event) {
+                var elem = document.querySelector('.active');
+
+                if (event.key === 'w') {
+                    elem.style.top = (parseInt(elem.style.top, 10) - 10) + 'px';
+                }
+                if (event.key === 'a') {
+                    elem.style.left = (parseInt(elem.style.left, 10) - 10) + 'px';
+                }
+                if (event.key === 's') {
+                    elem.style.top = (parseInt(elem.style.top, 10) + 10) + 'px';
+                }
+                if (event.key === 'd') {
+                    elem.style.left = (parseInt(elem.style.left, 10) + 10) + 'px';
+                }
+            });
         </script>
 
     </body>
