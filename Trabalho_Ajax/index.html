@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <style>
+        .sucesso {
+            background-color: rgb(0, 128, 0, 0.1);
+            border: 1px green solid;
+            border-radius: 5px;
+            color: green;
+            height: 60px;
+        }
+
+        .erro {
+            background-color: rgba(128, 0, 0, 0.1);
+            border: 1px red solid;
+            border-radius: 5px;
+            color: red;
+            height: 60px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <body>
+        <div class="container mt-4">
+            <h1 class="mb-5">Trabalho: Ajax com JSON</h1>
+            <h4 class="fst-italic text-end mb-2">Nome: Bruno Savazzi</h4>
+            <hr>
+            <div class="row bg-light p-5">
+                <div class="col-4">
+                    <form id="myForm">
+                        <div class="row mb-2">
+                            <div class="col-3">
+                                <label for="nome" class="form-label">Nome:</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="nome" name="nome" required>
+                                <div class="invalid-feedback">
+                                    Informe seu nome completo.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-3">
+                                <label for="email" class="form-label">Email:</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Informe um email válido.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center">
+                            <button onclick="inserirDados()" type="button"
+                                class="col-3 me-3 btn btn-primary">Gravar</button>
+                            <button type="reset" class="col-3 btn btn-warning">Limpar</button>
+                            <div id="confirmacao" class="sucesso mt-3 justify-content-center align-items-center">
+                                Dados gravados com sucesso.</div>
+                            <div id="erro" class="erro mt-3 justify-content-center align-items-center">
+                                Dados inválidos ou inexistentes.</div>
+                            <button onclick="lerDados()" type="button" class="col-9 mt-5 btn btn-info">Atualizar dados
+                                tabela</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-8">
+                    <table id="tabelaDados" class="table table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="col-5">Nome</th>
+                                <th class="col-5">Email</th>
+                                <th class="col-2">Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpoTabela">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#confirmacao').css('display', 'none');
+                $('#erro').css('display', 'none');
+                lerDados();
+                validarDados();
+            });
+        </script>
+
+    </body>
+
+</html>
