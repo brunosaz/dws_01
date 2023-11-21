@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+
     <style>
         body {
             margin: 0 2vw;
@@ -21,60 +21,102 @@
             padding: 4px;
         }
 
-        #boxGreen {
+        .box {
             width: 5em;
             height: 5em;
             border: solid 4px black;
-            background-color: green;
             margin: 12px;
+        }
+
+        #boxGreen {
+            background-color: green;
         }
 
         #boxBlue {
-            width: 5em;
-            height: 5em;
-            border: solid 4px black;
             background-color: blue;
-            margin: 12px;
         }
 
         #boxRed {
-            width: 5em;
-            height: 5em;
-            border: solid 4px black;
             background-color: red;
-            margin: 12px;
+        }
+
+        .active {
+            position: absolute;
+            z-index: 1;
+            border: solid 4px yellow;
         }
     </style>
 
 </head>
 
-
 <body>
+    <h1 class="mb-5">Praticando 4 - Minigame JS</h1>
+    <p><u>Instruções:</u></p>
+    <ol>
+        <li>Clique em um dos quadrados coloridos.</li>
+        <li>Depois use as teclas <span id="lt">W</span> <span id="lt">A</span> <span id="lt">S</span> <span
+                id="lt">D</span> para movimentar os elementos para cima, esquerda, baixo e direita respectivamente.
+        </li>
+        <input type="hidden" id="ativo" value="0">
+    </ol>
+    <div class="text-center">
+        <img src="wasd.jpg" alt="Teclas">
+    </div>
 
-    <body>
+    <div class="d-flex caixas">
+        <div id="boxRed" class="order-1 box" onclick="caixa('Red')"></div>
+        <div id="boxBlue" class="order-2 box" onclick="caixa('Blue')"></div>
+        <div id="boxGreen" class="order-3 box" onclick="caixa('Green')"></div>
+    </div>
 
-        <h1 class="mb-5">Praticando 4 - Minigame JS</h1>
-        <p><u>Instruções:</u></p>
-        <ol>
-            <li>Clique em um dos quadrados coloridos.</li>
-            <li>Depois use as teclas <span id="lt">W</span> <span id="lt">A</span> <span id="lt">S</span> <span
-                    id="lt">D</span> para movimentar os elementos para cima, esquerda, baixo e direita respectivamente.
-            </li>
-        </ol>
-        <div class="text-center">
-            <img src="wasd.jpg" alt="Teclas">
-        </div>
+    <script>
+        var caixaAtual = null,
+            cor = $('#ativo'),
+            divPai = $('.caixas');
 
-        <div class="d-flex">
-            <div id="boxRed"></div>
-            <div id="boxBlue"></div>
-            <div id="boxGreen"></div>
-        </div>
+        function vwToPx(vw) {
+            return (vw * window.innerWidth) / 100;
+        }
 
-        <script>
+        function vhToPx(vh) {
+            return (vh * window.innerHeight) / 100;
+        }
 
-        </script>
+        function caixa(elemento) {
+            if (caixaAtual) {
+                if (cor.val() == elemento) {
+                    caixaAtual.removeClass('active');
+                    caixaAtual = null;
+                    cor.val('0');
+                } else {
+                    alert("Atenção! Já existe um quadrado selecionado, desselecione-o antes de selecionar outro.");
+                }
+            } else {
+                cor.val(elemento);
+                caixaAtual = $('#box' + elemento);
+                caixaAtual.addClass('active').css({ top: vhToPx('50') + 'px', left: vwToPx('45') + 'px' });
+            }
+        }
 
-    </body>
+        $(document).keydown(function (event) {
+            var elem = $('.active');
+
+            switch (event.key) {
+                case 'w':
+                    elem.css('top', '-=10px');
+                    break;
+                case 'a':
+                    elem.css('left', '-=10px');
+                    break;
+                case 's':
+                    elem.css('top', '+=10px');
+                    break;
+                case 'd':
+                    elem.css('left', '+=10px');
+                    break;
+            }
+        });
+    </script>
+</body>
 
 </html>
